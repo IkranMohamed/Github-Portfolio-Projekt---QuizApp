@@ -1,0 +1,12 @@
+[
+  {
+    "Text": "What is the capital of Sweden?",
+    "Options": [ "Stockholm", "Gothenburg", "Malmö" ],
+    "CorrectAnswer": "Stockholm"
+  },
+  {
+    "Text": "Which planet is known as the Red Planet?",
+    "Options": [ "Earth", "Mars", "Venus" ],
+    "CorrectAnswer": "Mars"
+  }
+]

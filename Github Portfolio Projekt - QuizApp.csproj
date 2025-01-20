@@ -23,9 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\question.json">
+    <None Update="questions.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>
