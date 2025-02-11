@@ -3,11 +3,13 @@
     public class Ranking
     {
         public List<Player> Players { get; set; }
+        public int TotalQuestions { get; set; }
 
-        public Ranking() 
+        public Ranking(int totalQuestions)
         {
 
             Players = new List<Player>();
+            TotalQuestions = totalQuestions;
 
         }
 
@@ -19,12 +21,13 @@
         public void DisplayRanking()
         {
             var topPlayers = Players.OrderByDescending(p => p.Score).ToList();
-            foreach (var player in Players)
+            Console.WriteLine("Ranking:");
+            for (int i = 0; i < topPlayers.Count; i++)
             {
-                Console.WriteLine($"Rank {player.Rank}: {player.Name} - {player.Score} points");
+
+                Console.WriteLine($"Rank {i + 1}: {topPlayers[i].Name} - {topPlayers[i].Score}/{TotalQuestions} correct answers");
+
             }
-
         }
-
     }
 }

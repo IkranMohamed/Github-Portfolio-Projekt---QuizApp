@@ -8,11 +8,12 @@ namespace Github_Portfolio_Projekt___QuizApp
         private Ranking _ranking;
 
 
-        // Konstruktor för att ta in quizservice och ranking
+        // Konstruktor 
         public Menu()
         {
-            _ranking = new Ranking();
+
             var questions = JsonUtility.ReadQuestionsFromFile("questions.json");
+            _ranking = new Ranking(questions.Count);
             _quizService = new QuizService(questions, _ranking);
         }
 
@@ -22,7 +23,6 @@ namespace Github_Portfolio_Projekt___QuizApp
 
             while (!exit)
             {
-                Spectre.Console.AnsiConsole.Markup("[bold yellow]Quiz Game[/]");
                 var menu = new Spectre.Console.SelectionPrompt<string>()
                     .AddChoices("Start Quiz", "View Ranking", "Exit");
 
@@ -30,6 +30,7 @@ namespace Github_Portfolio_Projekt___QuizApp
 
                 switch (choice)
                 {
+
                     case "Start Quiz":
                         StartQuiz();
                         break;
@@ -44,9 +45,15 @@ namespace Github_Portfolio_Projekt___QuizApp
         }
         private void StartQuiz()
         {
-            var player = new Player { Name = "Ikrans Quiz", Score = 10 };
+            var playerName = AnsiConsole.Ask<string>("Please enter your name:");
+            var player = new Player { Name = playerName, Score = 0 };
+
+            //Starta Quizet
             _quizService.StartQuiz(player);
 
+            //Visa rankningen efter quizet
+            AnsiConsole.Markup("[bold green]Quiz finished! Here's the [/]");
+            _ranking.DisplayRanking();
         }
 
         private void ViewRanking()
@@ -55,7 +62,7 @@ namespace Github_Portfolio_Projekt___QuizApp
 
         }
     }
-}   
+}
 
 
 

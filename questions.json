@@ -1,12 +1,24 @@
 [
   {
     "Text": "What is the capital of Sweden?",
-    "Options": [ "Stockholm", "Gothenburg", "Malmö" ],
+    "Options": [ "Stockholm", "Gothenburg", "Malmo" ],
     "CorrectAnswer": "Stockholm"
   },
   {
     "Text": "Which planet is known as the Red Planet?",
     "Options": [ "Earth", "Mars", "Venus" ],
     "CorrectAnswer": "Mars"
+  },
+
+  {
+    "Text": "What is the chemical symbol for water?",
+    "Options": [ "H2O", "CO2", "O2", "NaCl" ],
+    "CorrectAnswer": "H2O"
+  },
+
+  {
+    "Text": "Which gas do plants absorb from the atmosphere?",
+    "Options": [ "Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen" ],
+    "CorrectAnswer": "Carbon Dioxide"
   }
 ]
